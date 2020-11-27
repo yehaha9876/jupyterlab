@@ -32,11 +32,11 @@ COPY bashrc /etc/bash.bashrc
 RUN echo "set background=dark" >> /etc/vim/vimrc.local
 
 # Install latest KFP SDK & Kale & JupyterLab Extension
-RUN pip3 install --upgrade pip && \
-    pip3 install --upgrade "jupyterlab" && \
-    pip3 install --upgrade "kfp" && \
-    pip3 install -U kubeflow-kale && \
-    jupyter labextension install kubeflow-kale-labextension
+RUN pip3 install --upgrade pip 
+RUN pip3 install --upgrade "jupyterlab" 
+RUN pip3 install --upgrade "kfp"
+RUN pip3 install -U kubeflow-kale
+RUN jupyter labextension install kubeflow-kale-labextension
 
 RUN pip3 install kubeflow-fairing kubeflow-metadata fire joblib nbconvert pathlib pandas sklearn xgboost importlib kubernetes tensorflow keras 
 
