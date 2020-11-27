@@ -14,7 +14,7 @@
 
 # Use tensorflow-1.14.0 as a base image, allowing the user to
 # speficy if they want GPU support, by setting IMAGE_TYPE to "gpu".
-ARG IMAGE_TYPE="cpu"
+ARG IMAGE_TYPE="gpu"
 FROM gcr.io/kubeflow-images-public/tensorflow-2.1.0-notebook-${IMAGE_TYPE}:1.0.0
 
 USER root
