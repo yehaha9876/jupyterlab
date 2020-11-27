@@ -39,7 +39,10 @@ RUN pip3 install --upgrade pip && \
     jupyter labextension install kubeflow-kale-labextension
 
 RUN pip3 install kubeflow-fairing kubeflow-metadata fire joblib nbconvert pathlib pandas sklearn xgboost importlib kubernetes tensorflow keras 
+
 COPY kfp.py /usr/local/lib/python3.6/dist-packages/kale/rpc/kfp.py
+COPY transport_pool_.py /usr/local/lib/python3.6/dist-packages/containerregistry/transport/transport_pool_.py
+COPY append.py /usr/local/lib/python3.6/dist-packages/kubeflow/fairing/builders/append/append.py
 
 RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/jovyan
 WORKDIR /home/jovyan
